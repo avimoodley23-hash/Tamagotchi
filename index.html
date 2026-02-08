@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Pal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">🐾</div>
+          <div>
+            <h1>Pet Pal</h1>
+            <p class="sub">A tiny pet to love, feed, and play with</p>
+          </div>
+        </div>
+
+        <div class="meta">
+          <div class="pill" id="timePill">⏳</div>
+          <button class="ghost" id="resetBtn" title="Reset pet">Reset</button>
+        </div>
+      </header>
+
+      <section class="card pet-card">
+        <div class="pet-header">
+          <div class="pet-name">
+            <h2 id="petName">Your Pet</h2>
+            <p id="petStage" class="muted">Stage: Egg</p>
+          </div>
+
+          <div class="status-row">
+            <span class="badge" id="moodBadge">🙂 Okay</span>
+            <span class="badge" id="healthBadge">❤️ Healthy</span>
+          </div>
+        </div>
+
+        <div class="pet-area">
+          <div class="pet" id="petSprite" aria-label="pet">
+            <div class="pet-face" id="petFace">•ᴗ•</div>
+          </div>
+
+          <div class="speech" id="speechBubble">Hi! Name me 🐣</div>
+        </div>
+
+        <div class="bars">
+          <div class="bar">
+            <div class="bar-top">
+              <span>Hunger</span><span id="hungerVal">0</span>
+            </div>
+            <div class="track"><div class="fill" id="hungerFill"></div></div>
+          </div>
+          <div class="bar">
+            <div class="bar-top">
+              <span>Happiness</span><span id="happyVal">0</span>
+            </div>
+            <div class="track"><div class="fill" id="happyFill"></div></div>
+          </div>
+          <div class="bar">
+            <div class="bar-top">
+              <span>Energy</span><span id="energyVal">0</span>
+            </div>
+            <div class="track"><div class="fill" id="energyFill"></div></div>
+          </div>
+          <div class="bar">
+            <div class="bar-top">
+              <span>Cleanliness</span><span id="cleanVal">0</span>
+            </div>
+            <div class="track"><div class="fill" id="cleanFill"></div></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="nameBtn">Name</button>
+          <button class="btn" id="feedBtn">Feed 🍎</button>
+          <button class="btn" id="playBtn">Play 🎾</button>
+          <button class="btn" id="cleanBtn">Clean 🛁</button>
+          <button class="btn" id="sleepBtn">Sleep 😴</button>
+        </div>
+
+        <div class="log" id="log"></div>
+      </section>
+
+      <section class="card game-card">
+        <div class="game-head">
+          <h3>Mini Game, Catch the Treat</h3>
+          <p class="muted">Click the treat before time runs out to boost happiness.</p>
+        </div>
+
+        <div class="game">
+          <div class="game-hud">
+            <span class="pill" id="scorePill">Score: 0</span>
+            <span class="pill" id="roundPill">Round: 0</span>
+            <button class="btn small" id="startGameBtn">Start</button>
+          </div>
+
+          <div class="arena" id="arena" aria-label="game arena">
+            <button class="treat" id="treat" aria-label="treat" hidden>🍪</button>
+          </div>
+
+          <p class="muted" id="gameMsg">A quick game for quick joy.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="muted">
+          Tip: Leave this tab open, your pet’s needs change over time. Progress saves on this device.
+        </p>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
