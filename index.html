@@ -13,99 +13,152 @@
           <div class="logo">🐾</div>
           <div>
             <h1>Pet Pal</h1>
-            <p class="sub">A tiny pet to love, feed, and play with</p>
+            <p class="sub">A tiny pet to love, feed, train, and walk</p>
           </div>
         </div>
 
         <div class="meta">
           <div class="pill" id="timePill">⏳</div>
+          <button class="ghost" id="codeBtn" title="Enter secret code">Code</button>
           <button class="ghost" id="resetBtn" title="Reset pet">Reset</button>
         </div>
       </header>
 
-      <section class="card pet-card">
-        <div class="pet-header">
-          <div class="pet-name">
-            <h2 id="petName">Your Pet</h2>
-            <p id="petStage" class="muted">Stage: Egg</p>
-          </div>
-
-          <div class="status-row">
-            <span class="badge" id="moodBadge">🙂 Okay</span>
-            <span class="badge" id="healthBadge">❤️ Healthy</span>
-          </div>
-        </div>
-
-        <div class="pet-area">
-          <div class="pet" id="petSprite" aria-label="pet">
-            <div class="pet-face" id="petFace">•ᴗ•</div>
-          </div>
-
-          <div class="speech" id="speechBubble">Hi! Name me 🐣</div>
-        </div>
-
-        <div class="bars">
-          <div class="bar">
-            <div class="bar-top">
-              <span>Hunger</span><span id="hungerVal">0</span>
+      <section class="grid">
+        <section class="card pet-card">
+          <div class="pet-header">
+            <div class="pet-name">
+              <h2 id="petName">Your Pet</h2>
+              <p class="muted" id="petStage">Stage: Egg</p>
+              <p class="muted" id="petPersona">Personality: ,</p>
             </div>
-            <div class="track"><div class="fill" id="hungerFill"></div></div>
-          </div>
-          <div class="bar">
-            <div class="bar-top">
-              <span>Happiness</span><span id="happyVal">0</span>
+
+            <div class="status-row">
+              <span class="badge" id="moodBadge">🙂 Okay</span>
+              <span class="badge" id="healthBadge">❤️ Healthy</span>
+              <span class="badge" id="streakBadge">🔥 Streak: 0</span>
             </div>
-            <div class="track"><div class="fill" id="happyFill"></div></div>
           </div>
-          <div class="bar">
-            <div class="bar-top">
-              <span>Energy</span><span id="energyVal">0</span>
+
+          <div class="pet-area">
+            <div class="pet" id="petSprite" aria-label="pet">
+              <div class="pet-face" id="petFace">•ᴗ•</div>
+              <div class="flies" id="flies" hidden>🪰🪰</div>
             </div>
-            <div class="track"><div class="fill" id="energyFill"></div></div>
+
+            <div class="speech" id="speechBubble">Hi! Name me 🐣</div>
           </div>
-          <div class="bar">
-            <div class="bar-top">
-              <span>Cleanliness</span><span id="cleanVal">0</span>
+
+          <div class="bars">
+            <div class="bar">
+              <div class="bar-top">
+                <span>Hunger</span><span id="hungerVal">0</span>
+              </div>
+              <div class="track"><div class="fill" id="hungerFill"></div></div>
             </div>
-            <div class="track"><div class="fill" id="cleanFill"></div></div>
-          </div>
-        </div>
 
-        <div class="actions">
-          <button class="btn" id="nameBtn">Name</button>
-          <button class="btn" id="feedBtn">Feed 🍎</button>
-          <button class="btn" id="playBtn">Play 🎾</button>
-          <button class="btn" id="cleanBtn">Clean 🛁</button>
-          <button class="btn" id="sleepBtn">Sleep 😴</button>
-        </div>
+            <div class="bar">
+              <div class="bar-top">
+                <span>Happiness</span><span id="happyVal">0</span>
+              </div>
+              <div class="track"><div class="fill" id="happyFill"></div></div>
+            </div>
 
-        <div class="log" id="log"></div>
-      </section>
+            <div class="bar">
+              <div class="bar-top">
+                <span>Energy</span><span id="energyVal">0</span>
+              </div>
+              <div class="track"><div class="fill" id="energyFill"></div></div>
+            </div>
 
-      <section class="card game-card">
-        <div class="game-head">
-          <h3>Mini Game, Catch the Treat</h3>
-          <p class="muted">Click the treat before time runs out to boost happiness.</p>
-        </div>
+            <div class="bar">
+              <div class="bar-top">
+                <span>Cleanliness</span><span id="cleanVal">0</span>
+              </div>
+              <div class="track"><div class="fill" id="cleanFill"></div></div>
+            </div>
 
-        <div class="game">
-          <div class="game-hud">
-            <span class="pill" id="scorePill">Score: 0</span>
-            <span class="pill" id="roundPill">Round: 0</span>
-            <button class="btn small" id="startGameBtn">Start</button>
-          </div>
-
-          <div class="arena" id="arena" aria-label="game arena">
-            <button class="treat" id="treat" aria-label="treat" hidden>🍪</button>
+            <div class="bar">
+              <div class="bar-top">
+                <span>Bond</span><span id="bondVal">0</span>
+              </div>
+              <div class="track"><div class="fill" id="bondFill"></div></div>
+            </div>
           </div>
 
-          <p class="muted" id="gameMsg">A quick game for quick joy.</p>
-        </div>
+          <div class="actions">
+            <button class="btn" id="nameBtn">Name</button>
+            <button class="btn" id="feedBtn">Feed 🍎</button>
+            <button class="btn" id="treatBtn">Treat 🍪</button>
+            <button class="btn" id="playBtn">Play 🎾</button>
+            <button class="btn" id="cleanBtn">Clean 🛁</button>
+            <button class="btn" id="medicineBtn">Medicine 💊</button>
+            <button class="btn" id="sleepBtn">Sleep 😴</button>
+            <button class="btn" id="walkBtn">Walk 🚶</button>
+            <button class="btn" id="shareBtn">Share 📸</button>
+          </div>
+
+          <div class="log" id="log"></div>
+        </section>
+
+        <section class="card side-card">
+          <h3>Closet and Room</h3>
+          <p class="muted">Unlocked items appear here.</p>
+
+          <div class="two-col">
+            <div class="panel">
+              <h4>Outfits</h4>
+              <div class="chips" id="outfitChips"></div>
+            </div>
+            <div class="panel">
+              <h4>Backgrounds</h4>
+              <div class="chips" id="bgChips"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h4>Tricks</h4>
+            <p class="muted" id="trickHint">Train bond to unlock tricks.</p>
+            <div class="actions tight">
+              <button class="btn small" id="trickSitBtn">Sit</button>
+              <button class="btn small" id="trickRollBtn">Roll</button>
+              <button class="btn small" id="trickHiBtn">High Five</button>
+              <button class="btn small" id="trainBtn">Train</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h4>Diary</h4>
+            <p class="muted">One entry per day.</p>
+            <div class="diary" id="diaryBox"></div>
+          </div>
+        </section>
+
+        <section class="card game-card">
+          <div class="game-head">
+            <h3>Mini Game, Catch the Treat</h3>
+            <p class="muted">Click the treat before time runs out to boost happiness.</p>
+          </div>
+
+          <div class="game">
+            <div class="game-hud">
+              <span class="pill" id="scorePill">Score: 0</span>
+              <span class="pill" id="roundPill">Round: 0</span>
+              <button class="btn small" id="startGameBtn">Start</button>
+            </div>
+
+            <div class="arena" id="arena" aria-label="game arena">
+              <button class="treat" id="treat" aria-label="treat" hidden>🍪</button>
+            </div>
+
+            <p class="muted" id="gameMsg">A quick game for quick joy.</p>
+          </div>
+        </section>
       </section>
 
       <footer class="footer">
         <p class="muted">
-          Tip: Leave this tab open, your pet’s needs change over time. Progress saves on this device.
+          Tip: Keep the tab open, needs change over time. Progress saves on this device.
         </p>
       </footer>
     </main>
